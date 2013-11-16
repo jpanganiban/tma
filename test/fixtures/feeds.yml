@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  msg_id: MyString
+  message: MyString
+  susbcription: MyString
+
+two:
+  msg_id: MyString
+  message: MyString
+  susbcription: MyString
