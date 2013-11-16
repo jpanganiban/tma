@@ -20,4 +20,13 @@ class ApplicationController < ActionController::Base
 
     render json: {success: true}
   end
+
+  def reply
+    message = params['message_payload']['message'].downcase.gsub('reply ','')
+    msg = params['message_payload']['message'].split(' ')[0].downcase
+    if msg.eql?('reply')
+      x = Net::HTTP.post_form(URI.parse("tma.herokuapp.com/notify?msg_id=2&message=#{message}"))
+      puts x.body   
+    end
+  end
 end
