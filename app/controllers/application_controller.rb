@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
   require 'net/http'
 
   def callback
+    if not params[:subscriber_number]
+      puts "Subscriber number does not exist"
+      render json: {error: "Required parameter 'subscriber_number'"} and return
+    end
+
     Credential.create(access_token:params[:access_token],subscriber:params[:subscriber_number])
     render json: {success: true}
   end
