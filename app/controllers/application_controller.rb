@@ -29,6 +29,7 @@ class ApplicationController < ActionController::Base
   def reply
     message = params['message_payload']['message'].downcase.gsub('reply ','')
     msg = params['message_payload']['message'].split(' ')[0].downcase
+    # TODO: Replace code with notify ReliefBoard API
     if msg.eql?('reply')
       Credential.all.each do |sub|
       uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/5385/requests")
