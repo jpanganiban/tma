@@ -10,13 +10,18 @@ class NotifyController < ApplicationController
   end
 
   def notify    
+    Credential.all.each do |sub|
    	uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/5385/requests")
-    uri.query="app_id=&app_secret"
-       	Credential.all.each do |sub|
-    	response = Net::HTTP.post_form(uri, {"address" => sub.subscriber, "message" => "#{params[:msg_id]} #{params[:message]}"})
+    uri.query="app_id=&app_secret"  
+    response = Net::HTTP.post_form(uri, {"address" => sub.subscriber, "message" => "#{params[:msg_id]} #{params[:message]}"})
 		end
   end
 
 
 
+end
+
+
+Credential.all.each do |sub|
+  puts sub.subscriber
 end
