@@ -1,8 +1,8 @@
 YolandaStream::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  match "callback" => "notify#callback"
-  match "notify" => "notify#feed"
+  get :notify => "application#feed"
+  get :callback => "application#callback"
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
