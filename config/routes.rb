@@ -2,7 +2,7 @@ YolandaStream::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   get "notify" => "application#feed"
-  post "notify" => "application#feed",
+  post "notify" => "application#feed"
   get "callback" => "application#callback"
   
   # Sample of regular route:
