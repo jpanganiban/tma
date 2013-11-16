@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  require 'net/http'
 
   def callback
     Credential.create(access_token:params[:access_token],subscriber:params[:subscriber_number])
