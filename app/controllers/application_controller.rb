@@ -37,5 +37,7 @@ class ApplicationController < ActionController::Base
       response = Net::HTTP.post_form(uri, {"address" => sub.subscriber, "message" => "#{params[:msg_id]} #{params[:message]}"})
       end
     end
+    
+    render json: {success: true}
   end
 end
