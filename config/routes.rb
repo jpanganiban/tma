@@ -4,6 +4,7 @@ YolandaStream::Application.routes.draw do
   get "notify" => "application#feed"
   post "notify" => "application#feed"
   get "callback" => "application#callback"
+  get "reply" => "application#reply"
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
