@@ -9,7 +9,7 @@ class NotifyController < ApplicationController
   	#endpoint
   end
 
-  def notify    
+  def feeds    
     Credential.all.each do |sub|
    	uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/5385/requests")
     uri.query="app_id=&app_secret"  
