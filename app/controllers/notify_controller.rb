@@ -16,12 +16,4 @@ class NotifyController < ApplicationController
     response = Net::HTTP.post_form(uri, {"address" => sub.subscriber, "message" => "#{params[:msg_id]} #{params[:message]}"})
 		end
   end
-
-
-
-end
-
-
-Credential.all.each do |sub|
-  puts sub.subscriber
 end
